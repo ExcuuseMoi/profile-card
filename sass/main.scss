@@ -1,0 +1,97 @@
+@import './colors';
+*,
+*::before {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+html {
+	font-size: 62.5%;
+}
+body {
+	font-family: 'Kumbh Sans', sans-serif;
+	font-size: 1.6rem;
+	background-color: $dark-cyan;
+	color: $very-dark-desaturated-blue;
+}
+.main {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100vw;
+	height: 100vh;
+}
+.card {
+	min-width: 280px;
+	max-width: 350px;
+	margin: 0 1em;
+	background-color: #fff;
+	border-radius: 14px;
+	overflow: hidden;
+
+	.container {
+		position: relative;
+		.bubbles {
+			max-height: 22vh;
+			width: 100%;
+		}
+		.avatar {
+			position: absolute;
+			bottom: 0;
+			left: 50%;
+			transform: translate(-50%, +50%);
+			width: 11rem;
+			height: 11rem;
+			border: 6px solid #fff;
+			border-radius: 50%;
+		}
+	}
+	&__mid-content {
+		position: relative;
+		padding: 5em 0 1.7em 0;
+		text-align: center;
+		line-height: 1.7;
+		&::before {
+			content: '';
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			border-bottom: 1px solid $transparent-line;
+		}
+		&-heading {
+			font-size: 1.8rem;
+			span {
+				font-weight: normal;
+				color: $dark-grayish-blue;
+			}
+		}
+		p {
+			color: $dark-grayish-blue;
+			font-size: 1.4rem;
+		}
+	}
+	&__bottom-content {
+		display: flex;
+		justify-content: space-evenly;
+		padding-top: 1.3em;
+
+		&--left,
+		&--mid,
+		&--right {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			padding-bottom: 1.2em;
+			line-height: 1.5;
+			h2 {
+				font-size: 1.7rem;
+			}
+			p {
+				font-size: 1.1rem;
+				color: $dark-gray;
+			}
+		}
+	}
+}
